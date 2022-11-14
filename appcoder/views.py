@@ -7,7 +7,7 @@ from appcoder.forms import *
 
 
 
-
+# Create your views here.
 def inicio(request):
     return render(request, 'appcoder/inicio.html')
 
@@ -30,12 +30,13 @@ def creacion_curso(request):
 def buscar_curso(request):
     return render(request, 'appcoder/busqueda_cursos.html')
 
-
 def resultado_busqueda_cursos(request):
-     
-     nombre_curso = request.GET('nombre_curso')
-     cursos = Curso.objects.filter(nombre_icontains=nombre_curso)
-    return render(request,'appcoder/resultados_busqueda_cursos.html')
+    
+    nombre_curso = request.GET["nombre_curso"]
+    curso = Curso.objects.filter(nombre__icontains=nombre_curso)
+    contexto = {'curso': curso}
+   
+    return render(request, 'appcoder/resultados_busqueda_cursos.html', contexto)
 
 
 

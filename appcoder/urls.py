@@ -10,7 +10,7 @@ urlpatterns = [
     path('cursos/', cursos, name='coder-cursos'),
     path('cursos/crear/', creacion_curso, name='coder-cursos-crear'),
     path('cursos/buscar/', buscar_curso, name='coder-cursos-buscar'),
-    path('cursos/buscar/resultado', resultado_busqueda_cursos, name='coder-cursos-buscar-resultado'),
+    path('cursos/resultado/', resultado_busqueda_cursos, name='coder-cursos-resultado'),
     path('entregables/', entregables, name='coder-entregables')
 
 ]
